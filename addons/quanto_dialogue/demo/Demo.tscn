@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cc6oh3d8hvesm"]
+
+[ext_resource type="Script" uid="uid://dadwlehven3kv" path="res://addons/quanto_dialogue/demo/demo.gd" id="1_3x1vp"]
+[ext_resource type="PackedScene" uid="uid://o2kt5b33a0i4" path="res://addons/quanto_dialogue/examples/dialogue_runner.tscn" id="2_cpip0"]
+[ext_resource type="Script" uid="uid://cdly85b5hpdnt" path="res://addons/quanto_dialogue/textmap/quanto_dialogue_player.gd" id="3_t5idb"]
+
+[node name="Main" type="Control" unique_id=595120541]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3x1vp")
+
+[node name="DialogueRunner" parent="." unique_id=2076078586 instance=ExtResource("2_cpip0")]
+layout_mode = 1
+
+[node name="QuantoDialoguePlayer" type="Node" parent="." unique_id=696894861 node_paths=PackedStringArray("runner")]
+unique_name_in_owner = true
+script = ExtResource("3_t5idb")
+runner = NodePath("../DialogueRunner")
+metadata/_custom_type_script = "uid://cdly85b5hpdnt"

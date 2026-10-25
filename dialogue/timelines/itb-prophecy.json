@@ -1,0 +1,11 @@
+{
+	"events": [
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_ITB_PROPHECY_1",
+			"type": "line"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

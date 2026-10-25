@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c0hsdueq8r1ly"]
+
+[ext_resource type="Script" uid="uid://tqxrbna1ywbp" path="res://Scripts/rhythm_level.gd" id="1_00cdw"]
+
+[node name="RhythmLevel" type="Node3D" unique_id=51320982]
+script = ExtResource("1_00cdw")

@@ -1,0 +1,13 @@
+{
+"format": 2,
+"source_locale": "en",
+"default_map": "main",
+"maps": {
+"main": "res://dialogue/text/main.{locale}.json"
+},
+"timelines": {
+"amogus-prophecy": "res://dialogue/timelines/amogus-prophecy.json",
+"gim-prophecy": "res://dialogue/timelines/gim-prophecy.json",
+"itb-prophecy": "res://dialogue/timelines/itb-prophecy.json"
+}
+}

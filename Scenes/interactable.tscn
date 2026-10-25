@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://drhgp3ln6hanc"]
+
+[ext_resource type="Script" uid="uid://rlrw2tm0gg37" path="res://Scripts/interactable.gd" id="1_8s6bd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e4v4m"]
+radius = 1.1005114
+
+[node name="Interactable" type="Area3D" unique_id=934048661]
+script = ExtResource("1_8s6bd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1639878546]
+shape = SubResource("SphereShape3D_e4v4m")
+debug_color = Color(0.9542807, 2.117753e-06, 0.5517502, 0.41960785)

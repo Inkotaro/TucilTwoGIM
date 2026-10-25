@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://303s8dqv0lf7"]
+
+[ext_resource type="Script" uid="uid://coi82qmmijao4" path="res://Scripts/chart_maker.gd" id="1_e4ss6"]
+
+[node name="ChartMaker" type="Node2D" unique_id=513262385]
+script = ExtResource("1_e4ss6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2032880755]

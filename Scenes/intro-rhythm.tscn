@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c26a65w4sroev"]
+
+[ext_resource type="Script" uid="uid://cydnfexnm0yen" path="res://Scripts/intro_rhythm.gd" id="1_r2ryv"]
+
+[node name="IntroRhythm" type="Control" unique_id=1915664581]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r2ryv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=353761655]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=416619226]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

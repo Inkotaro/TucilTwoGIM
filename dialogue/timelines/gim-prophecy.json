@@ -1,0 +1,66 @@
+{
+	"events": [
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_1",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_2",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_3",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_4",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_5",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_6",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_7",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_8",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_9",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_10",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_11",
+			"type": "line"
+		},
+		{
+			"speaker": "Inko(#010)",
+			"text_id": "TIMELINE_GIM_PROPHECY_12",
+			"type": "line"
+		}
+	],
+	"map_id": "main",
+	"version": 2
+}

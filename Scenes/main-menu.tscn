@@ -1,0 +1,301 @@
+[gd_scene format=3 uid="uid://dccd1frr4252k"]
+
+[ext_resource type="Script" uid="uid://bjqxq1gkdh8s3" path="res://Scenes/main_menu.gd" id="1_ivk0r"]
+[ext_resource type="Texture2D" uid="uid://degageb7xpw4r" path="res://Assets/Sprites/Ralsei/ralsei-sit.png" id="2_ank1t"]
+[ext_resource type="Script" uid="uid://cuffvge5ad4aa" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd" id="4_se2kc"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="7_4gyfd"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_uq2ob"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="9_46a5s"]
+[ext_resource type="FontFile" uid="uid://cgpc11w41h7fe" path="res://Assets/Fonts/dungeon-mode.ttf" id="9_ank1t"]
+[ext_resource type="Shader" uid="uid://bd7gcupl5r0bq" path="res://Shader/prophecy.gdshader" id="10_cc6s4"]
+[ext_resource type="Texture2D" uid="uid://cog3g8uss68cv" path="res://Assets/Sprites/Ralsei/image_depths.png" id="11_qiyd7"]
+[ext_resource type="Texture2D" uid="uid://tsw0rj52cx55" path="res://Assets/Sprites/Ralsei/gim.png" id="12_hf31h"]
+[ext_resource type="Shader" uid="uid://cd2v6yvsa1mv" path="res://Shader/chromatic.gdshader" id="13_4k5jk"]
+[ext_resource type="AudioStream" uid="uid://dm42iov223ugj" path="res://Music/before-the-story.mp3" id="13_davb5"]
+[ext_resource type="Texture2D" uid="uid://dscc2fekg27uh" path="res://Assets/Sprites/Ralsei/dark-fountain.png" id="14_rtx0u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by3rn"]
+atlas = ExtResource("2_ank1t")
+region = Rect2(25, 0, 23, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gck0f"]
+atlas = ExtResource("2_ank1t")
+region = Rect2(0, 0, 23, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50r88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by3rn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gck0f")
+}],
+"loop": 0,
+"name": &"sit",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_eimum"]
+script = ExtResource("8_uq2ob")
+
+[sub_resource type="Resource" id="Resource_uyc3m"]
+script = ExtResource("4_se2kc")
+frequency = 0.05
+metadata/_custom_type_script = "uid://cuffvge5ad4aa"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wesrp"]
+render_priority = 0
+shader = ExtResource("10_cc6s4")
+shader_parameter/Sprite_Texture = ExtResource("12_hf31h")
+shader_parameter/Scroll_Texture = ExtResource("11_qiyd7")
+shader_parameter/Use_Original_Texture = false
+shader_parameter/Pixel_Size = 0.01
+shader_parameter/Frame_Rect = Vector4(0, 0, 1, 1)
+shader_parameter/Scrolling_Speed = Vector2(-1, -1)
+shader_parameter/Time_Scale = 0.1
+shader_parameter/Texture_Scale = 1.0
+shader_parameter/Height = 8.0
+shader_parameter/Cycles = 0.4
+shader_parameter/Offset = 0.0
+shader_parameter/Distance = 35.0
+shader_parameter/Count = 2
+shader_parameter/Fade = 0.25
+shader_parameter/Start_Alpha = 0.8
+shader_parameter/Tint_Amount = 0.5
+shader_parameter/Tint = Color(1, 1, 1, 1)
+shader_parameter/Pulse_both_Directions = false
+shader_parameter/Diagonal_Angle = 45.0
+shader_parameter/Echo_Blend_Mode = 0
+
+[sub_resource type="Environment" id="Environment_xatgx"]
+background_mode = 1
+glow_enabled = true
+glow_bloom = 0.2
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.2
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxhur"]
+shader = ExtResource("13_4k5jk")
+shader_parameter/strength = 0.05000000074506
+shader_parameter/edge_falloff = true
+shader_parameter/distortion_amount = -0.08
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfclm"]
+atlas = ExtResource("14_rtx0u")
+region = Rect2(0, 0, 96, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jvta"]
+atlas = ExtResource("14_rtx0u")
+region = Rect2(97, 0, 96, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc2d3"]
+atlas = ExtResource("14_rtx0u")
+region = Rect2(194, 0, 96, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsjm8"]
+atlas = ExtResource("14_rtx0u")
+region = Rect2(291, 0, 96, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t62y5"]
+atlas = ExtResource("14_rtx0u")
+region = Rect2(388, 0, 96, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu2mx"]
+atlas = ExtResource("14_rtx0u")
+region = Rect2(485, 0, 96, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmmg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfclm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jvta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc2d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsjm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t62y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu2mx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Node3D" unique_id=202116413]
+script = ExtResource("1_ivk0r")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="." unique_id=1447188839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004272461, 0.19906247, 0.0041503906)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_50r88")
+animation = &"sit"
+autoplay = "sit"
+
+[node name="PhantomCamera" type="Node3D" parent="." unique_id=837977726]
+transform = Transform3D(1, 0, 0, 0, 0.9999902, -0.0008568531, 0, 0.0008568531, 0.9999902, 0, 0.3, 1)
+top_level = true
+script = ExtResource("7_4gyfd")
+follow_mode = 2
+look_at_mode = 2
+tween_resource = SubResource("Resource_eimum")
+follow_offset = Vector3(0, 0.3, 1)
+follow_damping = true
+look_at_offset = Vector3(0, 0.3, 0)
+look_at_damping = true
+noise = SubResource("Resource_uyc3m")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Camera" type="Camera3D" parent="." unique_id=980312756]
+transform = Transform3D(0.9999851, -0.0037085875, 0.0040013343, 0.003720415, 0.99998873, -0.0029525512, -0.0039903396, 0.0029673937, 0.99998766, 0, 0.3, 1)
+top_level = true
+size = 3.0
+
+[node name="PhantomCameraHost" type="Node" parent="Camera" unique_id=1330399346]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("9_46a5s")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1897255453]
+transform = Transform3D(0.28856057, 0, 0, 0, 0.28856057, 0, 0, 0, 1, -0.004272461, 0.6689148, -0.2345047)
+material_override = SubResource("ShaderMaterial_wesrp")
+texture = ExtResource("12_hf31h")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1436944297]
+environment = SubResource("Environment_xatgx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2033715777]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=114549278]
+material = SubResource("ShaderMaterial_uxhur")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1288100008]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=36902111]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1125741564]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=519888245]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_ank1t")
+text = "Fluffyboi Simulator
+Submission for GIM Programming Clan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=777598502]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_ank1t")
+text = "by Inkotaro (Timoo) Aviator #010"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1388226613]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=77810841]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_ank1t")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[node name="DialogEditorButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1323970584]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_ank1t")
+theme_override_font_sizes/font_size = 24
+text = "Dialog Editor"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=141451346]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_ank1t")
+theme_override_font_sizes/font_size = 24
+text = "Exit Game
+"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1357705875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004272461, 1.0617676, -1.490036)
+sprite_frames = SubResource("SpriteFrames_dmmg6")
+autoplay = "default"
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="." unique_id=383396921]
+transform = Transform3D(1.693105, 0, 0, 0, 1.693105, 0, 0, 0, 1.693105, 1.7992853, 1.0617676, -3.2184143)
+sprite_frames = SubResource("SpriteFrames_dmmg6")
+autoplay = "default"
+
+[node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="." unique_id=1918018679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9373175, 1.0617676, -4.20076)
+sprite_frames = SubResource("SpriteFrames_dmmg6")
+autoplay = "default"
+
+[node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="." unique_id=1864902439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9820533, 1.0617676, -1.5632629)
+sprite_frames = SubResource("SpriteFrames_dmmg6")
+autoplay = "default"
+
+[node name="AnimatedSprite3D5" type="AnimatedSprite3D" parent="." unique_id=1367844646]
+transform = Transform3D(1.6197706, 0, 0, 0, 1.6197706, 0, 0, 0, 1.6197706, -3.6021404, 1.0617676, -2.2694397)
+sprite_frames = SubResource("SpriteFrames_dmmg6")
+autoplay = "default"
+
+[node name="AnimatedSprite3D7" type="AnimatedSprite3D" parent="." unique_id=154476031]
+transform = Transform3D(1.693105, 0, 0, 0, 1.693105, 0, 0, 0, 1.693105, 1.7992853, 1.0617676, 0.75798035)
+sprite_frames = SubResource("SpriteFrames_dmmg6")
+autoplay = "default"
+
+[node name="AnimatedSprite3D8" type="AnimatedSprite3D" parent="." unique_id=1116559311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9373175, 1.0617676, 0.8632202)
+sprite_frames = SubResource("SpriteFrames_dmmg6")
+autoplay = "default"
+
+[node name="AnimatedSprite3D10" type="AnimatedSprite3D" parent="." unique_id=1113758884]
+transform = Transform3D(1.6197706, 0, 0, 0, 1.6197706, 0, 0, 0, 1.6197706, -3.6021404, 1.0617676, 0.67707825)
+sprite_frames = SubResource("SpriteFrames_dmmg6")
+autoplay = "default"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1211107051]
+stream = ExtResource("13_davb5")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/DialogEditorButton" to="." method="_on_dialog_editor_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

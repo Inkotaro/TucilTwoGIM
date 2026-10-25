@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://o2kt5b33a0i4"]
+
+[ext_resource type="Script" uid="uid://dt483fawmtw7e" path="res://addons/quanto_dialogue/examples/dialogue_runner.gd" id="1_g2edd"]
+[ext_resource type="Script" uid="uid://b1ljd4unlinmp" path="res://addons/quanto_dialogue/editor/dialogue_event.gd" id="2_vfk7f"]
+[ext_resource type="Script" uid="uid://b1xdveg8k2ssm" path="res://addons/quanto_dialogue/editor/dialogue_choice.gd" id="3_0m4k1"]
+[ext_resource type="Script" uid="uid://dl20pr5mfctci" path="res://addons/quanto_dialogue/editor/dialogue_data_resource.gd" id="4_vbtn4"]
+[ext_resource type="Script" uid="uid://d00bfkm4feqv4" path="res://addons/quanto_dialogue/typewriter/typewriter_config.gd" id="5_8cqv5"]
+[ext_resource type="AudioStream" uid="uid://d3qnih7k3mu8e" path="res://addons/quanto_dialogue/sfx/txt_default.ogg" id="6_0m4k1"]
+[ext_resource type="AudioStream" uid="uid://u54g2f754s15" path="res://addons/quanto_dialogue/sfx/txt_finish.ogg" id="7_vbtn4"]
+[ext_resource type="Theme" uid="uid://cs6u1afkgw317" path="res://addons/quanto_dialogue/themes/quanto.tres" id="8_gbbba"]
+[ext_resource type="Script" uid="uid://dv2ygiig6ylaw" path="res://addons/quanto_dialogue/effects/scale_in_effect.gd" id="9_xcn64"]
+
+[sub_resource type="Resource" id="Resource_74kf5"]
+script = ExtResource("2_vfk7f")
+speaker = "meow"
+metadata/_custom_type_script = "uid://b1ljd4unlinmp"
+
+[sub_resource type="Resource" id="Resource_vfk7f"]
+script = ExtResource("2_vfk7f")
+speaker = "meowwad"
+metadata/_custom_type_script = "uid://b1ljd4unlinmp"
+
+[sub_resource type="Resource" id="Resource_aqd5a"]
+script = ExtResource("4_vbtn4")
+events = Array[ExtResource("2_vfk7f")]([SubResource("Resource_74kf5"), SubResource("Resource_vfk7f")])
+metadata/_custom_type_script = "uid://dl20pr5mfctci"
+
+[sub_resource type="Resource" id="Resource_gbbba"]
+script = ExtResource("5_8cqv5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpdgf"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 20
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_xcn64"]
+script = ExtResource("9_xcn64")
+
+[node name="DialogueRunner" type="MarginContainer" unique_id=2076078586]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("8_gbbba")
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_g2edd")
+dialog_resource = SubResource("Resource_aqd5a")
+typewriter_config = SubResource("Resource_gbbba")
+action_name = "interact"
+
+[node name="TypewriterTimer" type="Timer" parent="." unique_id=709107563]
+unique_name_in_owner = true
+
+[node name="TypewriterPlayer" type="AudioStreamPlayer" parent="." unique_id=423179401]
+unique_name_in_owner = true
+stream = ExtResource("6_0m4k1")
+
+[node name="FinishPlayer" type="AudioStreamPlayer" parent="." unique_id=508244278]
+unique_name_in_owner = true
+stream = ExtResource("7_vbtn4")
+
+[node name="Panel" type="Panel" parent="." unique_id=198961716]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_fpdgf")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1123497901]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=352250098]
+layout_mode = 2
+
+[node name="SpeakerLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=827014627]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("8_gbbba")
+text = "Speaker"
+
+[node name="TypewriterLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=1231734419]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_gbbba")
+bbcode_enabled = true
+text = "Hello world! meowow"
+custom_effects = [SubResource("RichTextEffect_xcn64")]
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=768749196]
+unique_name_in_owner = true
+layout_mode = 2

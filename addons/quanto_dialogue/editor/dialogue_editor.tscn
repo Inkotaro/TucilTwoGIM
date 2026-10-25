@@ -1,0 +1,305 @@
+[gd_scene format=3 uid="uid://c7yxwcvusy761"]
+
+[ext_resource type="Theme" uid="uid://cs6u1afkgw317" path="res://addons/quanto_dialogue/themes/quanto.tres" id="1_4mj35"]
+[ext_resource type="Script" uid="uid://cx6hy1aajof1x" path="res://addons/quanto_dialogue/editor/timeline/timeline_editor.gd" id="1_icrug"]
+[ext_resource type="Script" uid="uid://b2d6goepx1cn8" path="res://addons/quanto_dialogue/editor/event_list.gd" id="2_m3743"]
+[ext_resource type="Texture2D" uid="uid://ditkmfly6d0bn" path="res://addons/quanto_dialogue/icons/MainPlay.svg" id="3_58ydg"]
+[ext_resource type="PackedScene" uid="uid://o2kt5b33a0i4" path="res://addons/quanto_dialogue/examples/dialogue_runner.tscn" id="3_tbo1p"]
+[ext_resource type="Script" uid="uid://d00bfkm4feqv4" path="res://addons/quanto_dialogue/typewriter/typewriter_config.gd" id="4_hqjtm"]
+[ext_resource type="Script" uid="uid://ce0ppngba2jgw" path="res://addons/quanto_dialogue/projects/quanto_project_dialogue.gd" id="5_3cw6p"]
+[ext_resource type="AudioStream" uid="uid://bikfusttq0310" path="res://addons/quanto_dialogue/music/yume-nikki.ogg" id="8_3cw6p"]
+
+[sub_resource type="Resource" id="Resource_4mj35"]
+script = ExtResource("4_hqjtm")
+
+[node name="DialogueEditor" type="Control" unique_id=380376454]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_4mj35")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=225646000]
+stream = ExtResource("8_3cw6p")
+pitch_scale = 0.8
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=727861824]
+layer = 99
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=473074722]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4mj35")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=2100559992]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=761530256]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1115235159]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1144499246]
+layout_mode = 2
+text = "Quanto Dialogue"
+
+[node name="CreditLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=346476690]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "by Inkotaro #010
+Note for the Progs: pls do not use it on the side panel,
+just run the game ;w; "
+
+[node name="ProjectLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=234248718]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "/home/ink/Documents/Tucil-Two"
+theme_override_font_sizes/font_size = 16
+text = "Project: Tucil-Two  |"
+horizontal_alignment = 2
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=791354808]
+layout_mode = 2
+text = "DIALOG EDITOR"
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=247082992]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Timelines" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer" unique_id=566550531]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("1_icrug")
+metadata/_tab_index = 0
+
+[node name="Toolbar" type="MarginContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines" unique_id=1619857422]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar" unique_id=617902735]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer" unique_id=1179950581]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FileMenuButton" type="MenuButton" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer/HBoxContainer" unique_id=116140528]
+unique_name_in_owner = true
+layout_mode = 2
+text = "File"
+item_count = 13
+popup/item_0/text = "New"
+popup/item_0/id = 0
+popup/item_1/text = "Open"
+popup/item_1/id = 1
+popup/item_2/text = "Save"
+popup/item_2/id = 2
+popup/item_3/text = "Save As"
+popup/item_3/id = 3
+popup/item_4/id = -1
+popup/item_4/separator = true
+popup/item_5/text = "TextMap Registry..."
+popup/item_5/id = 4
+popup/item_6/text = "Edit Text..."
+popup/item_6/id = 5
+popup/item_7/id = -1
+popup/item_7/separator = true
+popup/item_8/text = "New Project..."
+popup/item_8/id = 10
+popup/item_9/text = "Open Project..."
+popup/item_9/id = 11
+popup/item_10/id = 0
+popup/item_10/separator = true
+popup/item_11/text = "Export..."
+popup/item_11/id = 12
+popup/item_12/text = "Project List"
+popup/item_12/id = 13
+
+[node name="UndoButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer/HBoxContainer" unique_id=1246096635]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Undo"
+
+[node name="RedoButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer/HBoxContainer" unique_id=458869160]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Redo"
+
+[node name="MapLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer/HBoxContainer" unique_id=1937407654]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+tooltip_text = "/home/ink/Documents/Tucil-Two/text/main.en.json"
+theme_override_font_sizes/font_size = 16
+text = "|  TextMap: main"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PathLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer" unique_id=121305635]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+tooltip_text = "Project: /home/ink/Documents/Tucil-Two
+/home/ink/Documents/Tucil-Two/timelines/gim-prophecy.json"
+theme_override_font_sizes/font_size = 16
+text = "Timeline: gim-prophecy"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer" unique_id=13887138]
+layout_mode = 2
+
+[node name="BlockSearchEdit" type="LineEdit" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer/HBoxContainer2" unique_id=1638951847]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+custom_maximum_size = Vector2(150, -1)
+layout_mode = 2
+placeholder_text = "Search..."
+clear_button_enabled = true
+
+[node name="RunButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Toolbar/HBoxContainer/HBoxContainer2" unique_id=1501532760]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Run"
+icon = ExtResource("3_58ydg")
+
+[node name="Timelines" type="HSplitContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines" unique_id=1980644933]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="Panel" type="Panel" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines" unique_id=1321503074]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/Panel" unique_id=380052833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/Panel/MarginContainer" unique_id=873174868]
+layout_mode = 2
+
+[node name="SearchEdit" type="LineEdit" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/Panel/MarginContainer/VBoxContainer" unique_id=641634025]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Search..."
+clear_button_enabled = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/Panel/MarginContainer/VBoxContainer" unique_id=1205544683]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabList" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=265054847]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines" unique_id=959863729]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EventList" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/ScrollContainer" unique_id=1026734270]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_m3743")
+metadata/_custom_type_script = "uid://b2d6goepx1cn8"
+
+[node name="EmptyEventList" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/ScrollContainer" unique_id=2009395251]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/ScrollContainer/EmptyEventList" unique_id=1726608766]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "No timelines yet."
+
+[node name="EmptyNewButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines/Timelines/ScrollContainer/EmptyEventList" unique_id=636819980]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Create a timeline"
+
+[node name="OpenFileDialog" type="FileDialog" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines" unique_id=594673947]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.json ; Dialogue JSON")
+
+[node name="SaveFileDialog" type="FileDialog" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines" unique_id=1647003613]
+unique_name_in_owner = true
+oversampling_override = 1.0
+access = 2
+filters = PackedStringArray("*.json ; Dialogue JSON")
+
+[node name="CommitTimer" type="Timer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines" unique_id=901519185]
+unique_name_in_owner = true
+wait_time = 0.4
+one_shot = true
+
+[node name="TextMapDialog" type="FileDialog" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines" unique_id=439054798]
+unique_name_in_owner = true
+oversampling_override = 1.0
+
+[node name="ProjectDialog" type="ConfirmationDialog" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Timelines" unique_id=1163244029]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Projects"
+position = Vector2i(417, 194)
+size = Vector2i(480, 330)
+visible = true
+min_size = Vector2i(460, 300)
+ok_button_text = "Open"
+cancel_button_text = "Continue"
+script = ExtResource("5_3cw6p")
+metadata/_custom_type_script = "uid://ce0ppngba2jgw"
+
+[node name="Runner" type="MarginContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer" unique_id=496744367]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="DialogueRunner" parent="CanvasLayer/MarginContainer/VBoxContainer/TabContainer/Runner" unique_id=358662647 instance=ExtResource("3_tbo1p")]
+unique_name_in_owner = true
+layout_mode = 2
+typewriter_config = SubResource("Resource_4mj35")

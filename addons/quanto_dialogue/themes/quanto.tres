@@ -1,0 +1,31 @@
+[gd_resource type="Theme" format=3 uid="uid://cs6u1afkgw317"]
+
+[ext_resource type="FontFile" uid="uid://c38v6p5p1maeq" path="res://addons/quanto_dialogue/fonts/norwester.otf" id="2_qqtaa"]
+[ext_resource type="FontFile" uid="uid://c5j7vi863pe56" path="res://addons/quanto_dialogue/fonts/baksoap.regular.otf" id="3_ekee4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kptsr"]
+bg_color = Color(0, 0, 0, 1)
+
+[resource]
+Button/fonts/font = ExtResource("2_qqtaa")
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("2_qqtaa")
+LineEdit/fonts/font = ExtResource("2_qqtaa")
+MenuBar/fonts/font = ExtResource("2_qqtaa")
+MenuButton/fonts/font = ExtResource("2_qqtaa")
+PopupMenu/fonts/font = ExtResource("2_qqtaa")
+PopupMenu/fonts/font_separator = ExtResource("2_qqtaa")
+PopupMenu/fonts/title_font = ExtResource("2_qqtaa")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_kptsr")
+RichTextLabel/font_sizes/bold_font_size = 24
+RichTextLabel/font_sizes/bold_italics_font_size = 24
+RichTextLabel/font_sizes/italics_font_size = 24
+RichTextLabel/font_sizes/mono_font_size = 24
+RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/fonts/bold_font = ExtResource("3_ekee4")
+RichTextLabel/fonts/bold_italics_font = ExtResource("3_ekee4")
+RichTextLabel/fonts/italics_font = ExtResource("3_ekee4")
+RichTextLabel/fonts/mono_font = ExtResource("3_ekee4")
+RichTextLabel/fonts/normal_font = ExtResource("3_ekee4")
+TabContainer/fonts/font = ExtResource("2_qqtaa")
+TextEdit/fonts/font = ExtResource("3_ekee4")
